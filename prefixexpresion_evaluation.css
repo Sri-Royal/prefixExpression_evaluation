@@ -1,0 +1,210 @@
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top left, #1b2735, #090a0f 60%);
+    color: #eaeaea;
+    min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    padding: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+header span {
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.85;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ===== CONTROLS ===== */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 55%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+input::placeholder {
+    color: #777;
+}
+
+/* ===== BUTTONS ===== */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #00f5a0, #00d9f5);
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 245, 160, 0.45);
+}
+
+/* ===== INFO ===== */
+#info {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #ffd369;
+}
+
+/* ===== ERROR ===== */
+.input-error {
+    border: 2px solid #ff4d4d;
+    box-shadow: 0 0 12px #ff4d4d;
+}
+
+.error-text {
+    color: #ff6b6b;
+}
+
+/* ===== VISUAL ===== */
+.visual {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* ===== VISIBILITY CONTROL ===== */
+.hidden {
+    display: none;
+}
+
+/* ===== CARD (GLASSMORPHISM) ===== */
+.card {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.18),
+        rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.55),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.card h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    padding-bottom: 8px;
+}
+
+/* ===== STACK TREE ===== */
+.stack-tree {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    position: relative;
+}
+
+/* ===== STACK NODE ===== */
+.stack-node {
+    width: 82px;
+    padding: 10px;
+    margin: 8px 0;
+    background: linear-gradient(135deg, #2af598, #009efd);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+    position: relative;
+    animation: push 0.3s ease;
+}
+
+/* Connector line */
+.stack-node::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 12px;
+    background: #ffffffaa;
+    left: 50%;
+    bottom: -12px;
+    transform: translateX(-50%);
+}
+
+.stack-node:first-child::after {
+    display: none;
+}
+
+/* ===== OUTPUT ===== */
+.output {
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 4px;
+    margin-top: 20px;
+    color: #2effa7;
+}
+
+/* ===== CURRENT SYMBOL ===== */
+.current {
+    font-size: 42px;
+    text-align: center;
+    margin-top: 25px;
+    color: #ff6b6b;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.action-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.action-buttons button {
+    min-width: 140px;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes push {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
